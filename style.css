@@ -3,9 +3,12 @@
   --primary300: rgb(97, 145, 173);
   --primary500: rgb(48, 81, 99);
   --primary700: rgb(22, 40, 49);
-  --primary900: rgb(5, 22, 31);
+  --primary900: rgba(5, 22, 31, 0.5);
 
   --shadow: rgba(0, 0, 0, 0.212);
+}
+#backspace:before {
+  content: "\232B";
 }
 * {
   padding: 0;
@@ -14,36 +17,46 @@
 body {
   font-family: "ubuntu", sans-serif;
 
-  background: var(--primary900);
+  background: url(images/abstract_design-wallpaper-1920x1080.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
   width: 100%;
   height: 100vh;
 }
-#backspace:before {
-  content: "\232B";
+.container {
+  background: linear-gradient(-45deg, var(--primary900), var(--primary700));
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(25px);
 }
 .calculator {
+  background: linear-gradient(45deg, var(--primary900), var(--primary700));
   position: absolute;
   width: 350px;
-  height: 470px;
+  height: 480px;
 
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
 
-  border: 3px solid var(--primary500);
+  border: 3px solid var(--primary700);
   border-radius: 10px;
   overflow: hidden;
+
+  box-shadow: 5px 5px 10px var(--shadow);
 }
 .cal-screen {
   color: var(--primary900);
 
-  background: var(--primary100);
   position: absolute;
   width: 100%;
   height: 120px;
+  backdrop-filter: blur(5px);
 }
 .cal-screen-question {
+  color: var(--primary100);
   font-size: 20px;
   font-weight: 500;
 
@@ -53,16 +66,17 @@ body {
 }
 .cal-screen-question::before,
 .cal-screen-result::before {
-  color: var(--primary300);
+  color: var(--primary500);
   font-size: 10px;
   font-weight: 400;
 
   content: "Question: ";
   position: absolute;
-  top: -10px;
+  top: -15px;
   right: 0;
 }
 .cal-screen-result {
+  color: var(--primary100);
   font-size: 25px;
   font-weight: 600;
 
@@ -76,10 +90,9 @@ body {
 .cal-buttons {
   color: var(--primary100);
 
-  background: var(--primary500);
   position: absolute;
   width: 100%;
-  top: 112px;
+  top: 123px;
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -87,9 +100,9 @@ body {
 }
 .cal-button {
   font-size: 17px;
-
-  background: var(--primary700);
   text-align: center;
+
+  backdrop-filter: blur(25px);
   padding: 25px 0;
 
   transition: 0.05s;
