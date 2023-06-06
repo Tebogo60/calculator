@@ -9,7 +9,13 @@ let resultActive = false;
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     if (button.innerHTML.match(/[0-9]/) || button.innerHTML === ".") {
-      question.innerHTML += button.innerHTML;
+      if (resultActive !== false) {
+        reset();
+        question.innerHTML = button.innerHTML;
+        result.innerHTML = "";
+      } else {
+        question.innerHTML += button.innerHTML;
+      }
 
       numberActive = true;
     }
