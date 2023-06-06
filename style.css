@@ -17,7 +17,7 @@
 body {
   font-family: "ubuntu", sans-serif;
 
-  background: url(images/abstract_design-wallpaper-1920x1080.jpg);
+  background: var(--primary700);
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -29,7 +29,6 @@ body {
   background: linear-gradient(-45deg, var(--primary900), var(--primary700));
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(25px);
 }
 .calculator {
   background: linear-gradient(45deg, var(--primary900), var(--primary700));
@@ -53,7 +52,6 @@ body {
   position: absolute;
   width: 100%;
   height: 120px;
-  backdrop-filter: blur(5px);
 }
 .cal-screen-question {
   color: var(--primary100);
@@ -102,8 +100,8 @@ body {
   font-size: 17px;
   text-align: center;
 
-  backdrop-filter: blur(25px);
   padding: 25px 0;
+  outline: 2px solid var(--primary700);
 
   transition: 0.05s;
   cursor: pointer;
