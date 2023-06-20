@@ -34,7 +34,7 @@ Remember to double-check your input and calculations to ensure accuracy.
 
 ## Installaton
 
-Click [link](https://tebogo60.github.io/calculator/) to use!
+Click [link](https://tebogo60.github.io/calculator/){:target="\_blank"} to use!
 
 ## License
 
